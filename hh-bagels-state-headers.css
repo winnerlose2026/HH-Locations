@@ -1,111 +1,133 @@
 /*
- * H&H Bagels – Stockist Store Locator State Headers
+ * H&H Bagels – Stockist State Headers
  *
- * Upload in Stockist dashboard: Settings > Appearance > Advanced > Custom CSS
+ * Upload: Stockist dashboard > Settings > Appearance > Advanced > Custom CSS
  *
- * SETUP:
- *   1. In Stockist, create a Search Filter (tag) for each state below.
- *   2. Apply the matching tag to every location in that state.
- *   3. Sort/order your locations by state so same-state locations are grouped.
- *   4. Paste this CSS into the Custom CSS field.
+ * IMPORTANT – REORDER YOUR LOCATIONS FIRST:
+ *   Stockist sorts locations by priority (highest first). To get clean
+ *   state groupings, update each location's priority in your Stockist
+ *   dashboard to match the values below. Then these headers will appear
+ *   at the correct positions.
  *
- * SELECTOR NOTE:
- *   Stockist renders location results dynamically. The selectors below
- *   use common Stockist patterns. If headers don't appear, right-click a
- *   location in your browser > Inspect, then find the actual attribute
- *   that holds the tag name and replace [data-filters*="..."] accordingly.
+ *   CALIFORNIA (positions 1–4):
+ *     Echo Park .............. priority 100
+ *     Great Park Irvine ...... priority 99   (Coming Soon)
+ *     Palm Desert ............ priority 98
+ *     Santa Monica ........... priority 97
  *
- * States covered (18 locations):
- *   California – Santa Monica, Echo Park (Los Angeles), Palm Desert
- *   District of Columbia – Washington DC
- *   Florida – Boca Raton, Fruit Cove, Pinecrest, Tampa, West Palm Beach
- *   Illinois – Chicago
- *   New York – Upper East Side, Upper West Side, Kips Bay, Moynihan Train Hall, JFK Airport, LaGuardia Airport
- *   North Carolina – Chapel Hill
- *   Tennessee – Knoxville
+ *   DISTRICT OF COLUMBIA (position 5):
+ *     Mount Vernon Triangle .. priority 90
+ *
+ *   FLORIDA (positions 6–15):
+ *     Altamonte Springs ...... priority 85   (Coming Soon)
+ *     Boca Raton ............. priority 84
+ *     Flagler Village ........ priority 83   (Coming Soon)
+ *     Mandarin ............... priority 82
+ *     Palm Beach Gardens ..... priority 81   (Coming Soon)
+ *     Pinecrest .............. priority 80
+ *     South Tampa ............ priority 79
+ *     St. Johns .............. priority 78
+ *     West Palm Beach ........ priority 77
+ *     Wynwood/Midtown ........ priority 76   (Coming Soon)
+ *
+ *   ILLINOIS (position 16):
+ *     Fulton Market .......... priority 70   (Coming Soon)
+ *
+ *   NEW YORK (positions 17–23):
+ *     John F. Kennedy Airport  priority 65
+ *     Kips Bay ............... priority 64
+ *     LaGuardia Airport ...... priority 63
+ *     Moynihan Train Hall .... priority 62
+ *     Penn Station ........... priority 61
+ *     Upper East Side ........ priority 60
+ *     Upper West Side ........ priority 59
+ *
+ *   NORTH CAROLINA (position 24):
+ *     Chapel Hill ............ priority 50
+ *
+ *   TENNESSEE (position 25):
+ *     Turkey Creek ........... priority 45
+ *
+ *   TEXAS (position 26):
+ *     River Oaks ............. priority 40   (Coming Soon)
  */
 
 /* ============================================================
-   SHARED HEADER STYLE – applied via ::before on the first
-   location in each state group
+   SHARED STATE HEADER STYLE
    ============================================================ */
 
-[data-filters*="California"]::before,
-[data-filters*="District of Columbia"]::before,
-[data-filters*="Florida"]::before,
-[data-filters*="Illinois"]::before,
-[data-filters*="New York"]::before,
-[data-filters*="North Carolina"]::before,
-[data-filters*="Tennessee"]::before {
+.stockist-result-list ul > li::before {
+  display: none;
+}
+
+.stockist-result-list ul > li:nth-child(1)::before,
+.stockist-result-list ul > li:nth-child(5)::before,
+.stockist-result-list ul > li:nth-child(6)::before,
+.stockist-result-list ul > li:nth-child(16)::before,
+.stockist-result-list ul > li:nth-child(17)::before,
+.stockist-result-list ul > li:nth-child(24)::before,
+.stockist-result-list ul > li:nth-child(25)::before,
+.stockist-result-list ul > li:nth-child(26)::before {
   display: block;
   width: calc(100% + 32px);
-  margin: 24px -16px 12px -16px;
-  padding: 12px 16px;
+  margin: 20px -16px 12px -16px;
+  padding: 10px 16px;
   font-family: inherit;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: #ffffff;
   background-color: #051747;
-  border-radius: 2px;
   box-sizing: border-box;
 }
 
-/* --- California --- */
-[data-filters*="California"]::before {
+.stockist-result-list ul > li:nth-child(1)::before {
+  margin-top: 0;
+}
+
+/* ============================================================
+   STATE NAMES
+   ============================================================ */
+
+/* California – 4 locations (positions 1–4) */
+.stockist-result-list ul > li:nth-child(1)::before {
   content: "California";
 }
-[data-filters*="California"] ~ [data-filters*="California"]::before {
-  display: none;
-}
 
-/* --- District of Columbia --- */
-[data-filters*="District of Columbia"]::before {
+/* District of Columbia – 1 location (position 5) */
+.stockist-result-list ul > li:nth-child(5)::before {
   content: "District of Columbia";
 }
-[data-filters*="District of Columbia"] ~ [data-filters*="District of Columbia"]::before {
-  display: none;
-}
 
-/* --- Florida --- */
-[data-filters*="Florida"]::before {
+/* Florida – 10 locations (positions 6–15) */
+.stockist-result-list ul > li:nth-child(6)::before {
   content: "Florida";
 }
-[data-filters*="Florida"] ~ [data-filters*="Florida"]::before {
-  display: none;
-}
 
-/* --- Illinois --- */
-[data-filters*="Illinois"]::before {
+/* Illinois – 1 location (position 16) */
+.stockist-result-list ul > li:nth-child(16)::before {
   content: "Illinois";
 }
-[data-filters*="Illinois"] ~ [data-filters*="Illinois"]::before {
-  display: none;
-}
 
-/* --- New York --- */
-[data-filters*="New York"]::before {
+/* New York – 7 locations (positions 17–23) */
+.stockist-result-list ul > li:nth-child(17)::before {
   content: "New York";
 }
-[data-filters*="New York"] ~ [data-filters*="New York"]::before {
-  display: none;
-}
 
-/* --- North Carolina --- */
-[data-filters*="North Carolina"]::before {
+/* North Carolina – 1 location (position 24) */
+.stockist-result-list ul > li:nth-child(24)::before {
   content: "North Carolina";
 }
-[data-filters*="North Carolina"] ~ [data-filters*="North Carolina"]::before {
-  display: none;
-}
 
-/* --- Tennessee --- */
-[data-filters*="Tennessee"]::before {
+/* Tennessee – 1 location (position 25) */
+.stockist-result-list ul > li:nth-child(25)::before {
   content: "Tennessee";
 }
-[data-filters*="Tennessee"] ~ [data-filters*="Tennessee"]::before {
-  display: none;
+
+/* Texas – 1 location (position 26) */
+.stockist-result-list ul > li:nth-child(26)::before {
+  content: "Texas";
 }
 
 /* ============================================================
@@ -114,9 +136,7 @@
 
 .stockist-result {
   padding: 12px 16px;
-  margin: 4px 0;
   border-bottom: 1px solid #e8e8e8;
-  transition: background-color 0.2s ease;
 }
 
 .stockist-result:hover {
@@ -124,10 +144,8 @@
 }
 
 .stockist-result-name {
-  font-size: 15px;
   font-weight: 600;
   color: #051747;
-  margin-bottom: 4px;
 }
 
 .stockist-result-address {
@@ -141,20 +159,17 @@
    ============================================================ */
 
 @media (max-width: 600px) {
-  [data-filters*="California"]::before,
-  [data-filters*="District of Columbia"]::before,
-  [data-filters*="Florida"]::before,
-  [data-filters*="Illinois"]::before,
-  [data-filters*="New York"]::before,
-  [data-filters*="North Carolina"]::before,
-  [data-filters*="Tennessee"]::before {
-    font-size: 15px;
-    padding: 10px 12px;
-    margin: 16px -12px 8px -12px;
+  .stockist-result-list ul > li:nth-child(1)::before,
+  .stockist-result-list ul > li:nth-child(5)::before,
+  .stockist-result-list ul > li:nth-child(6)::before,
+  .stockist-result-list ul > li:nth-child(16)::before,
+  .stockist-result-list ul > li:nth-child(17)::before,
+  .stockist-result-list ul > li:nth-child(24)::before,
+  .stockist-result-list ul > li:nth-child(25)::before,
+  .stockist-result-list ul > li:nth-child(26)::before {
+    font-size: 14px;
+    padding: 8px 12px;
+    margin: 14px -12px 8px -12px;
     width: calc(100% + 24px);
-  }
-
-  .stockist-result {
-    padding: 10px 12px;
   }
 }
