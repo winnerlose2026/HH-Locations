@@ -31,9 +31,9 @@
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: #1a1a1a;
-  background-color: #f5f0e8;
-  border-left: 4px solid #c8a96e;
+  color: #ffffff;
+  background-color: #051747;
+  border-left: 4px solid #051747;
   border-radius: 2px;
   box-sizing: border-box;
 }
@@ -42,67 +42,6 @@
   margin-top: 0;
 }
 
-/* ============================================================
-   PER-STATE HEADER ACCENTS
-   Stockist applies the tag name as a data attribute or class.
-   Adjust selectors below to match your Stockist tag format.
-   ============================================================ */
-
-/* --- California --- */
-/* Locations: Santa Monica (710 Montana Ave), Echo Park (1498 W Sunset Blvd, Los Angeles), Palm Desert (73131 Country Club Dr) */
-.stockist-list-tag-header[data-tag="California"],
-.stockist-list-tag-header.California {
-  border-left-color: #d4a843;
-  background-color: #fdf8ee;
-}
-
-/* --- District of Columbia --- */
-/* Locations: Washington DC (601 K St NW) */
-.stockist-list-tag-header[data-tag="District of Columbia"],
-.stockist-list-tag-header.District-of-Columbia {
-  border-left-color: #4a6fa5;
-  background-color: #eef3fa;
-}
-
-/* --- Florida --- */
-/* Locations: Boca Raton (2200 Glades Rd), Fruit Cove (3735 Longleaf Pine Pkwy), Pinecrest (11311 S Dixie Hwy), Tampa (1155 S Dale Mabry Hwy), West Palm Beach (890 N Railroad Ave) */
-.stockist-list-tag-header[data-tag="Florida"],
-.stockist-list-tag-header.Florida {
-  border-left-color: #e8833a;
-  background-color: #fef4ec;
-}
-
-/* --- Illinois --- */
-/* Locations: Chicago (164 N Peoria St) */
-.stockist-list-tag-header[data-tag="Illinois"],
-.stockist-list-tag-header.Illinois {
-  border-left-color: #5b8c5a;
-  background-color: #eef5ee;
-}
-
-/* --- New York --- */
-/* Locations: Upper East Side (1551 2nd Ave), Upper West Side (526 Columbus Ave), Kips Bay (429 3rd Ave), Moynihan Train Hall (421 8th Ave), JFK Airport (Terminal 5), LaGuardia Airport (Terminal D) */
-.stockist-list-tag-header[data-tag="New York"],
-.stockist-list-tag-header.New-York {
-  border-left-color: #2b5797;
-  background-color: #ebf0f7;
-}
-
-/* --- North Carolina --- */
-/* Locations: Chapel Hill (239 S Estes Dr, #101) */
-.stockist-list-tag-header[data-tag="North Carolina"],
-.stockist-list-tag-header.North-Carolina {
-  border-left-color: #7b4f9e;
-  background-color: #f3eef8;
-}
-
-/* --- Tennessee --- */
-/* Locations: Knoxville (11390 Parkside Dr) */
-.stockist-list-tag-header[data-tag="Tennessee"],
-.stockist-list-tag-header.Tennessee {
-  border-left-color: #c0392b;
-  background-color: #fcecea;
-}
 
 /* ============================================================
    LOCATION CARDS – Styling for individual store results
@@ -122,7 +61,7 @@
 .stockist-result-name {
   font-size: 15px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #051747;
   margin-bottom: 4px;
 }
 
