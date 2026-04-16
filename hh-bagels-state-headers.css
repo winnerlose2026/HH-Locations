@@ -1,13 +1,21 @@
 /*
  * H&H Bagels – Stockist Store Locator State Headers
  *
- * Usage: Upload this CSS in your Stockist dashboard under Customize > Custom CSS.
- * Tag each location with its state name (e.g. "California", "Florida", etc.)
- * and enable "Group by tags" so these headers appear above each state section.
+ * Upload in Stockist dashboard: Settings > Appearance > Advanced > Custom CSS
  *
- * Locations sourced from hhbagels.com/contact#locations
+ * SETUP:
+ *   1. In Stockist, create a Search Filter (tag) for each state below.
+ *   2. Apply the matching tag to every location in that state.
+ *   3. Sort/order your locations by state so same-state locations are grouped.
+ *   4. Paste this CSS into the Custom CSS field.
  *
- * States covered:
+ * SELECTOR NOTE:
+ *   Stockist renders location results dynamically. The selectors below
+ *   use common Stockist patterns. If headers don't appear, right-click a
+ *   location in your browser > Inspect, then find the actual attribute
+ *   that holds the tag name and replace [data-filters*="..."] accordingly.
+ *
+ * States covered (18 locations):
  *   California – Santa Monica, Echo Park (Los Angeles), Palm Desert
  *   District of Columbia – Washington DC
  *   Florida – Boca Raton, Fruit Cove, Pinecrest, Tampa, West Palm Beach
@@ -18,14 +26,21 @@
  */
 
 /* ============================================================
-   BASE STYLES – Tag Group Headers (State Names)
+   SHARED HEADER STYLE – applied via ::before on the first
+   location in each state group
    ============================================================ */
 
-.stockist-list-tag-header {
+[data-filters*="California"]::before,
+[data-filters*="District of Columbia"]::before,
+[data-filters*="Florida"]::before,
+[data-filters*="Illinois"]::before,
+[data-filters*="New York"]::before,
+[data-filters*="North Carolina"]::before,
+[data-filters*="Tennessee"]::before {
   display: block;
-  width: 100%;
+  width: calc(100% + 32px);
+  margin: 24px -16px 12px -16px;
   padding: 12px 16px;
-  margin: 24px 0 8px 0;
   font-family: inherit;
   font-size: 18px;
   font-weight: 700;
@@ -33,18 +48,68 @@
   text-transform: uppercase;
   color: #ffffff;
   background-color: #051747;
-  border-left: 4px solid #051747;
   border-radius: 2px;
   box-sizing: border-box;
 }
 
-.stockist-list-tag-header:first-of-type {
-  margin-top: 0;
+/* --- California --- */
+[data-filters*="California"]::before {
+  content: "California";
+}
+[data-filters*="California"] ~ [data-filters*="California"]::before {
+  display: none;
 }
 
+/* --- District of Columbia --- */
+[data-filters*="District of Columbia"]::before {
+  content: "District of Columbia";
+}
+[data-filters*="District of Columbia"] ~ [data-filters*="District of Columbia"]::before {
+  display: none;
+}
+
+/* --- Florida --- */
+[data-filters*="Florida"]::before {
+  content: "Florida";
+}
+[data-filters*="Florida"] ~ [data-filters*="Florida"]::before {
+  display: none;
+}
+
+/* --- Illinois --- */
+[data-filters*="Illinois"]::before {
+  content: "Illinois";
+}
+[data-filters*="Illinois"] ~ [data-filters*="Illinois"]::before {
+  display: none;
+}
+
+/* --- New York --- */
+[data-filters*="New York"]::before {
+  content: "New York";
+}
+[data-filters*="New York"] ~ [data-filters*="New York"]::before {
+  display: none;
+}
+
+/* --- North Carolina --- */
+[data-filters*="North Carolina"]::before {
+  content: "North Carolina";
+}
+[data-filters*="North Carolina"] ~ [data-filters*="North Carolina"]::before {
+  display: none;
+}
+
+/* --- Tennessee --- */
+[data-filters*="Tennessee"]::before {
+  content: "Tennessee";
+}
+[data-filters*="Tennessee"] ~ [data-filters*="Tennessee"]::before {
+  display: none;
+}
 
 /* ============================================================
-   LOCATION CARDS – Styling for individual store results
+   LOCATION CARDS
    ============================================================ */
 
 .stockist-result {
@@ -72,14 +137,21 @@
 }
 
 /* ============================================================
-   RESPONSIVE ADJUSTMENTS
+   RESPONSIVE
    ============================================================ */
 
 @media (max-width: 600px) {
-  .stockist-list-tag-header {
+  [data-filters*="California"]::before,
+  [data-filters*="District of Columbia"]::before,
+  [data-filters*="Florida"]::before,
+  [data-filters*="Illinois"]::before,
+  [data-filters*="New York"]::before,
+  [data-filters*="North Carolina"]::before,
+  [data-filters*="Tennessee"]::before {
     font-size: 15px;
     padding: 10px 12px;
-    margin: 16px 0 6px 0;
+    margin: 16px -12px 8px -12px;
+    width: calc(100% + 24px);
   }
 
   .stockist-result {
