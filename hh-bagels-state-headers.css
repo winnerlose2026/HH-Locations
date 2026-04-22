@@ -9,16 +9,17 @@
  *   dashboard to match the values below. Then these headers will appear
  *   at the correct positions.
  *
- *   CALIFORNIA (positions 1–4):
+ *   CALIFORNIA (positions 1–5):
  *     Echo Park .............. priority 100
  *     Palm Desert ............ priority 99
  *     Santa Monica ........... priority 98
  *     Great Park Irvine ...... priority 97   (Coming Soon)
+ *     Westlake Village ....... priority 96   (Coming Soon)
  *
- *   DISTRICT OF COLUMBIA (position 5):
+ *   DISTRICT OF COLUMBIA (position 6):
  *     Mount Vernon Triangle .. priority 90
  *
- *   FLORIDA (positions 6–15):
+ *   FLORIDA (positions 7–16):
  *     Boca Raton ............. priority 85
  *     Mandarin ............... priority 84
  *     Pinecrest .............. priority 83
@@ -30,10 +31,10 @@
  *     Palm Beach Gardens ..... priority 77   (Coming Soon)
  *     Wynwood/Midtown ........ priority 76   (Coming Soon)
  *
- *   ILLINOIS (position 16):
+ *   ILLINOIS (position 17):
  *     Fulton Market .......... priority 70   (Coming Soon)
  *
- *   NEW YORK (positions 17–23):
+ *   NEW YORK (positions 18–24):
  *     John F. Kennedy Airport  priority 65
  *     Kips Bay ............... priority 64
  *     LaGuardia Airport ...... priority 63
@@ -42,13 +43,14 @@
  *     Upper East Side ........ priority 60
  *     Upper West Side ........ priority 59
  *
- *   NORTH CAROLINA (position 24):
+ *   NORTH CAROLINA (positions 25–26):
  *     Chapel Hill ............ priority 50
+ *     Cary ................... priority 49   (Coming Soon)
  *
- *   TENNESSEE (position 25):
+ *   TENNESSEE (position 27):
  *     Turkey Creek ........... priority 45
  *
- *   TEXAS (position 26):
+ *   TEXAS (position 28):
  *     River Oaks ............. priority 40   (Coming Soon)
  */
 
@@ -61,13 +63,13 @@
 }
 
 .stockist-result-list ul > li:nth-child(1)::before,
-.stockist-result-list ul > li:nth-child(5)::before,
 .stockist-result-list ul > li:nth-child(6)::before,
-.stockist-result-list ul > li:nth-child(16)::before,
+.stockist-result-list ul > li:nth-child(7)::before,
 .stockist-result-list ul > li:nth-child(17)::before,
-.stockist-result-list ul > li:nth-child(24)::before,
+.stockist-result-list ul > li:nth-child(18)::before,
 .stockist-result-list ul > li:nth-child(25)::before,
-.stockist-result-list ul > li:nth-child(26)::before {
+.stockist-result-list ul > li:nth-child(27)::before,
+.stockist-result-list ul > li:nth-child(28)::before {
   display: block;
   width: calc(100% + 32px);
   margin: 20px -16px 12px -16px;
@@ -90,43 +92,43 @@
    STATE NAMES
    ============================================================ */
 
-/* California – 4 locations (positions 1–4) */
+/* California – 5 locations (positions 1–5) */
 .stockist-result-list ul > li:nth-child(1)::before {
   content: "California";
 }
 
-/* District of Columbia – 1 location (position 5) */
-.stockist-result-list ul > li:nth-child(5)::before {
+/* District of Columbia – 1 location (position 6) */
+.stockist-result-list ul > li:nth-child(6)::before {
   content: "District of Columbia";
 }
 
-/* Florida – 10 locations (positions 6–15) */
-.stockist-result-list ul > li:nth-child(6)::before {
+/* Florida – 10 locations (positions 7–16) */
+.stockist-result-list ul > li:nth-child(7)::before {
   content: "Florida";
 }
 
-/* Illinois – 1 location (position 16) */
-.stockist-result-list ul > li:nth-child(16)::before {
+/* Illinois – 1 location (position 17) */
+.stockist-result-list ul > li:nth-child(17)::before {
   content: "Illinois";
 }
 
-/* New York – 7 locations (positions 17–23) */
-.stockist-result-list ul > li:nth-child(17)::before {
+/* New York – 7 locations (positions 18–24) */
+.stockist-result-list ul > li:nth-child(18)::before {
   content: "New York";
 }
 
-/* North Carolina – 1 location (position 24) */
-.stockist-result-list ul > li:nth-child(24)::before {
+/* North Carolina – 2 locations (positions 25–26) */
+.stockist-result-list ul > li:nth-child(25)::before {
   content: "North Carolina";
 }
 
-/* Tennessee – 1 location (position 25) */
-.stockist-result-list ul > li:nth-child(25)::before {
+/* Tennessee – 1 location (position 27) */
+.stockist-result-list ul > li:nth-child(27)::before {
   content: "Tennessee";
 }
 
-/* Texas – 1 location (position 26) */
-.stockist-result-list ul > li:nth-child(26)::before {
+/* Texas – 1 location (position 28) */
+.stockist-result-list ul > li:nth-child(28)::before {
   content: "Texas";
 }
 
@@ -160,13 +162,13 @@
 
 @media (max-width: 600px) {
   .stockist-result-list ul > li:nth-child(1)::before,
-  .stockist-result-list ul > li:nth-child(5)::before,
   .stockist-result-list ul > li:nth-child(6)::before,
-  .stockist-result-list ul > li:nth-child(16)::before,
+  .stockist-result-list ul > li:nth-child(7)::before,
   .stockist-result-list ul > li:nth-child(17)::before,
-  .stockist-result-list ul > li:nth-child(24)::before,
+  .stockist-result-list ul > li:nth-child(18)::before,
   .stockist-result-list ul > li:nth-child(25)::before,
-  .stockist-result-list ul > li:nth-child(26)::before {
+  .stockist-result-list ul > li:nth-child(27)::before,
+  .stockist-result-list ul > li:nth-child(28)::before {
     font-size: 14px;
     padding: 8px 12px;
     margin: 14px -12px 8px -12px;
