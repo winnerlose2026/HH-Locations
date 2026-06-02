@@ -175,3 +175,21 @@
     width: calc(100% + 24px);
   }
 }
+
+/* ===============================================================
+   SEARCH-MODE BANNER FIX (2026-06-02)
+   ---------------------------------------------------------------
+   The position-based banners above are correct for the default
+   browse list, but a ZIP search re-sorts results by distance,
+   which made them show the wrong state (e.g. Florida under
+   "CALIFORNIA"). This hides the banners ONLY while a search is
+   active — search results include a distance like "1.9 mi", which
+   the browse list does not — so the browse list keeps its banners.
+   Interim until the data-driven script ships on the Hydrogen site
+   (see README). Requires :has() support (all current browsers).
+   =============================================================== */
+
+.stockist-result-list ul:has(.stockist-result-distance-text) > li::before {
+  content: none !important;
+  display: none !important;
+}
