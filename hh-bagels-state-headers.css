@@ -52,6 +52,9 @@
  *
  *   TEXAS (position 28):
  *     River Oaks ............. priority 40   (Coming Soon)
+ *
+ *   UTAH (position 29):
+ *     Salt Lake City ......... priority < 40 (sorts last → position 29)
  */
 
 /* ============================================================
@@ -69,7 +72,8 @@
 .stockist-result-list ul > li:nth-child(18)::before,
 .stockist-result-list ul > li:nth-child(25)::before,
 .stockist-result-list ul > li:nth-child(27)::before,
-.stockist-result-list ul > li:nth-child(28)::before {
+.stockist-result-list ul > li:nth-child(28)::before,
+.stockist-result-list ul > li:nth-child(29)::before {
   display: block;
   width: calc(100% + 32px);
   margin: 20px -16px 12px -16px;
@@ -132,6 +136,11 @@
   content: "Texas";
 }
 
+/* Utah – 1 location (position 29) */
+.stockist-result-list ul > li:nth-child(29)::before {
+  content: "Utah";
+}
+
 /* ============================================================
    LOCATION CARDS
    ============================================================ */
@@ -168,7 +177,8 @@
   .stockist-result-list ul > li:nth-child(18)::before,
   .stockist-result-list ul > li:nth-child(25)::before,
   .stockist-result-list ul > li:nth-child(27)::before,
-  .stockist-result-list ul > li:nth-child(28)::before {
+  .stockist-result-list ul > li:nth-child(28)::before,
+  .stockist-result-list ul > li:nth-child(29)::before {
     font-size: 14px;
     padding: 8px 12px;
     margin: 14px -12px 8px -12px;
