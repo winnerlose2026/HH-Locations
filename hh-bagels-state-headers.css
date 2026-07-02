@@ -9,6 +9,11 @@
  *   dashboard to match the values below. Then these headers will appear
  *   at the correct positions.
  *
+ *   NOTE: positions count only VISIBLE locations. If you hide or unhide a
+ *   location, every state banner after it shifts, and the nth-child numbers
+ *   below must be renumbered to match. (Last updated after JFK + LaGuardia
+ *   were temporarily hidden — 27 visible locations.)
+ *
  *   CALIFORNIA (positions 1–5):
  *     Echo Park .............. priority 100
  *     Palm Desert ............ priority 99
@@ -34,27 +39,26 @@
  *   ILLINOIS (position 17):
  *     Fulton Market .......... priority 70   (Coming Soon)
  *
- *   NEW YORK (positions 18–24):
- *     John F. Kennedy Airport  priority 65
+ *   NEW YORK (positions 18–22):
  *     Kips Bay ............... priority 64
- *     LaGuardia Airport ...... priority 63
  *     Moynihan Train Hall .... priority 62
  *     Penn Station ........... priority 61
  *     Upper East Side ........ priority 60
  *     Upper West Side ........ priority 59
+ *     (temporarily hidden: John F. Kennedy Airport, LaGuardia Airport)
  *
- *   NORTH CAROLINA (positions 25–26):
+ *   NORTH CAROLINA (positions 23–24):
  *     Chapel Hill ............ priority 50
  *     Cary ................... priority 49   (Coming Soon)
  *
- *   TENNESSEE (position 27):
+ *   TENNESSEE (position 25):
  *     Turkey Creek ........... priority 45
  *
- *   TEXAS (position 28):
+ *   TEXAS (position 26):
  *     River Oaks ............. priority 40   (Coming Soon)
  *
- *   UTAH (position 29):
- *     Salt Lake City ......... priority < 40 (sorts last → position 29)
+ *   UTAH (position 27):
+ *     Salt Lake City ......... priority < 40 (sorts last)
  */
 
 /* ============================================================
@@ -70,10 +74,10 @@
 .stockist-result-list ul > li:nth-child(7)::before,
 .stockist-result-list ul > li:nth-child(17)::before,
 .stockist-result-list ul > li:nth-child(18)::before,
+.stockist-result-list ul > li:nth-child(23)::before,
 .stockist-result-list ul > li:nth-child(25)::before,
-.stockist-result-list ul > li:nth-child(27)::before,
-.stockist-result-list ul > li:nth-child(28)::before,
-.stockist-result-list ul > li:nth-child(29)::before {
+.stockist-result-list ul > li:nth-child(26)::before,
+.stockist-result-list ul > li:nth-child(27)::before {
   display: block;
   width: calc(100% + 32px);
   margin: 20px -16px 12px -16px;
@@ -116,28 +120,28 @@
   content: "Illinois";
 }
 
-/* New York – 7 locations (positions 18–24) */
+/* New York – 5 visible locations (positions 18–22) */
 .stockist-result-list ul > li:nth-child(18)::before {
   content: "New York";
 }
 
-/* North Carolina – 2 locations (positions 25–26) */
-.stockist-result-list ul > li:nth-child(25)::before {
+/* North Carolina – 2 locations (positions 23–24) */
+.stockist-result-list ul > li:nth-child(23)::before {
   content: "North Carolina";
 }
 
-/* Tennessee – 1 location (position 27) */
-.stockist-result-list ul > li:nth-child(27)::before {
+/* Tennessee – 1 location (position 25) */
+.stockist-result-list ul > li:nth-child(25)::before {
   content: "Tennessee";
 }
 
-/* Texas – 1 location (position 28) */
-.stockist-result-list ul > li:nth-child(28)::before {
+/* Texas – 1 location (position 26) */
+.stockist-result-list ul > li:nth-child(26)::before {
   content: "Texas";
 }
 
-/* Utah – 1 location (position 29) */
-.stockist-result-list ul > li:nth-child(29)::before {
+/* Utah – 1 location (position 27) */
+.stockist-result-list ul > li:nth-child(27)::before {
   content: "Utah";
 }
 
@@ -175,10 +179,10 @@
   .stockist-result-list ul > li:nth-child(7)::before,
   .stockist-result-list ul > li:nth-child(17)::before,
   .stockist-result-list ul > li:nth-child(18)::before,
+  .stockist-result-list ul > li:nth-child(23)::before,
   .stockist-result-list ul > li:nth-child(25)::before,
-  .stockist-result-list ul > li:nth-child(27)::before,
-  .stockist-result-list ul > li:nth-child(28)::before,
-  .stockist-result-list ul > li:nth-child(29)::before {
+  .stockist-result-list ul > li:nth-child(26)::before,
+  .stockist-result-list ul > li:nth-child(27)::before {
     font-size: 14px;
     padding: 8px 12px;
     margin: 14px -12px 8px -12px;
