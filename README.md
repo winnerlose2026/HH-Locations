@@ -71,6 +71,5 @@ The script and the matching data-driven CSS are in this repo
   upgrade (not deployed). The CSS replaces the live file; the script goes in the
   Hydrogen app.
 - `INSTALL-hydrogen.md` — install notes for the Hydrogen/Oxygen deploy.
-- `stockist-state-headers-all-in-one.js` — CSS + script in a single block, for a
-  site with a code-injection slot (won't run via GTM on the current site).
 - `store-locator-state-header-bug.md` — the original diagnosis (June 2, 2026).
+  Its code snippets are the first drafts; use the files above instead.

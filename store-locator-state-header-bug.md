@@ -32,6 +32,9 @@ Two additional consequences of the positional approach:
 - The banners carry no real data — they're literal strings glued to row numbers.
 
 ## Recommended fix (robust — correct in both browse and search)
+
+> **Superseded — don't copy the snippets below.** They are the June 2 first drafts, kept for the record. The current versions are `stockist-custom-css.css` and `stockist-state-headers.js` (install notes in `INSTALL-hydrogen.md`). The draft script below stops updating after a Hydrogen page change because it only watches the list element; the current script watches the whole page. The interim fix that actually shipped is the search-mode `:has()` rule in `hh-bagels-state-headers.css`, not the one-liner under "Quick interim fix".
+
 Drive the headers from each store's real state instead of row position. Each result already exposes its state in the address line (`.stockist-result-addr-locality`, e.g. "Pinecrest, FL 33156"), so it can be parsed reliably.
 
 **1. Remove** all the `nth-child(N)::before { content: "State" }` rules above (and the shared `::before` banner-styling rule and the `nth-child(1)::before { margin-top: 0 }` rule that go with them).
