@@ -58,5 +58,19 @@ That upgrade requires a first-party script on www.hhbagels.com, which is a
   page nonce or as a `/public` file referenced with the nonce), then deployed via
   Oxygen.
 
-The script and the matching data-driven CSS live with the project handoff notes
+The script and the matching data-driven CSS are in this repo
 (`stockist-state-headers.js`, `stockist-custom-css.css`, `INSTALL-hydrogen.md`).
+
+## Files
+
+- `hh-bagels-state-headers.css` — **live.** The CSS currently pasted into Stockist.
+  Its header comment holds the priority map; when a location is added, removed,
+  hidden, or unhidden, update the priorities and renumber the `nth-child`
+  positions (shared selector list, `content:` rules, and the mobile block).
+- `stockist-custom-css.css` + `stockist-state-headers.js` — the data-driven
+  upgrade (not deployed). The CSS replaces the live file; the script goes in the
+  Hydrogen app.
+- `INSTALL-hydrogen.md` — install notes for the Hydrogen/Oxygen deploy.
+- `stockist-state-headers-all-in-one.js` — CSS + script in a single block, for a
+  site with a code-injection slot (won't run via GTM on the current site).
+- `store-locator-state-header-bug.md` — the original diagnosis (June 2, 2026).

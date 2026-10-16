@@ -1,0 +1,82 @@
+/*
+ * H&H Bagels – Stockist State Headers (data-driven, search-safe)
+ * =============================================================
+ * WHERE TO PASTE: Stockist dashboard > Settings > Appearance > Advanced > Custom CSS
+ *   Replace the ENTIRE previous Custom CSS with this file.
+ *
+ * Pairs with the companion script "stockist-state-headers.js" (added once on the
+ * website where the locator is embedded). The script tags the first store of each
+ * state with data-hh-state="<State>", read from the store's real address; the CSS
+ * below renders that tag as the blue banner.
+ *
+ * WHY THIS FIXES THE BUG: the old CSS labeled fixed row positions
+ * (nth-child(1)="California", nth-child(7)="Florida", ...). A ZIP search re-sorts
+ * the list by distance, so row 1 was no longer a California store — but it still
+ * got the "California" banner. This version derives each banner from the store's
+ * own state, so it stays correct after any search.
+ *
+ * BONUS: you no longer need to hand-maintain per-location "priority" values to get
+ * correct headers. (Keeping them grouped by state simply gives the tidiest default
+ * browse list; it is no longer required for correctness.)
+ */
+
+/* ============================================================
+   STATE HEADERS  (driven by data-hh-state set by the script)
+   ============================================================ */
+.stockist-result-list ul > li::before {
+  content: none !important;   /* turn off any old position-based headers */
+  display: none !important;
+}
+
+.stockist-result-list ul > li[data-hh-state]::before {
+  content: attr(data-hh-state) !important;
+  display: block !important;
+  width: calc(100% + 32px);
+  margin: 20px -16px 12px -16px;
+  padding: 10px 16px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #051747;
+  box-sizing: border-box;
+}
+
+/* first banner sits flush to the top of the list */
+.stockist-result-list ul > li[data-hh-state]:first-child::before {
+  margin-top: 0 !important;
+}
+
+/* ============================================================
+   LOCATION CARDS   (unchanged from your previous CSS)
+   ============================================================ */
+.stockist-result {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.stockist-result:hover {
+  background-color: #fafafa;
+}
+.stockist-result-name {
+  font-weight: 600;
+  color: #051747;
+}
+.stockist-result-address {
+  font-size: 13px;
+  color: #666666;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 600px) {
+  .stockist-result-list ul > li[data-hh-state]::before {
+    font-size: 14px;
+    padding: 8px 12px;
+    margin: 14px -12px 8px -12px;
+    width: calc(100% + 24px);
+  }
+}
