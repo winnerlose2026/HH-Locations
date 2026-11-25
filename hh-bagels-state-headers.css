@@ -16,36 +16,35 @@
  *   Convention: within each state, OPEN locations sort first (alphabetically),
  *   then COMING SOON locations (alphabetically).
  *
- *   Last updated 2026-10-16:
- *     - Added Bozeman (MT), Coming Soon. First Montana location, so a new
- *       MONTANA banner sits between Illinois and New York (priority 67).
- *       No street number yet (new building): N Cottonwood Rd, Bozeman,
- *       MT 59718. Fill in the number in Stockist once it's assigned.
- *     - Added Apex (NC), Coming Soon, 5412 Apex Pkwy, A-3, Apex, NC 27502.
- *       It sorts before Cary inside North Carolina's Coming Soon group:
- *       Apex 49, Cary 49 -> 48.
- *     - 30 -> 32 visible locations. Banners after Illinois shift:
- *       New York 21 -> 22, North Carolina 26 -> 27, Tennessee 28 -> 30,
- *       Texas 29 -> 31, Utah 30 -> 32. Montana is new at 21.
- *   32 visible locations. JFK + LaGuardia still hidden.
+ *   Last updated 2026-11-25:
+ *     - Removed Brea (CA) -- deal fell through. Delete it in Stockist.
+ *       California drops from 7 to 6 locations; other CA priorities unchanged
+ *       (97 is simply unused now).
+ *     - 32 -> 31 visible locations. Every banner after California shifts up 1:
+ *       DC 8 -> 7, Florida 9 -> 8, Illinois 20 -> 19, Montana 21 -> 20,
+ *       New York 22 -> 21, North Carolina 27 -> 26, Tennessee 30 -> 29,
+ *       Texas 31 -> 30, Utah 32 -> 31.
+ *   31 visible locations. JFK + LaGuardia still hidden.
  *
- *   Previous update 2026-10-05: added Brea (CA), Coming Soon (priority 97);
- *   Great Park Irvine 97 -> 96, San Juan Capistrano 96 -> 95,
- *   Westlake Village 95 -> 94.
+ *   Previous update 2026-10-16: added Bozeman (MT), Coming Soon (priority 67,
+ *   new MONTANA banner, N Cottonwood Rd, Bozeman, MT 59718 -- street number
+ *   TBD); added Apex (NC), Coming Soon, 5412 Apex Pkwy, A-3 (Apex 49,
+ *   Cary 49 -> 48). 30 -> 32 visible locations.
  *
- *   CALIFORNIA (positions 1–7):
+ *   Earlier 2026-10-05: added Brea (CA) at priority 97 (since removed).
+ *
+ *   CALIFORNIA (positions 1–6):
  *     Echo Park .............. priority 100
  *     Palm Desert ............ priority 99
  *     Santa Monica ........... priority 98
- *     Brea ................... priority 97   (Coming Soon)
  *     Great Park Irvine ...... priority 96   (Coming Soon)
  *     San Juan Capistrano .... priority 95   (Coming Soon)
  *     Westlake Village ....... priority 94   (Coming Soon)
  *
- *   DISTRICT OF COLUMBIA (position 8):
+ *   DISTRICT OF COLUMBIA (position 7):
  *     Mount Vernon Triangle .. priority 90
  *
- *   FLORIDA (positions 9–19):
+ *   FLORIDA (positions 8–18):
  *     Altamonte Springs ...... priority 85
  *     Boca Raton ............. priority 84
  *     Mandarin ............... priority 83
@@ -58,13 +57,13 @@
  *     Flagler Village ........ priority 76   (Coming Soon)
  *     Wynwood/Midtown ........ priority 75   (Coming Soon)
  *
- *   ILLINOIS (position 20):
+ *   ILLINOIS (position 19):
  *     Fulton Market .......... priority 70
  *
- *   MONTANA (position 21):
- *     Bozeman ................ priority 67   (Coming Soon)   <-- NEW
+ *   MONTANA (position 20):
+ *     Bozeman ................ priority 67   (Coming Soon)
  *
- *   NEW YORK (positions 22–26):
+ *   NEW YORK (positions 21–25):
  *     Kips Bay ............... priority 64
  *     Moynihan Train Hall .... priority 62
  *     Penn Station ........... priority 61
@@ -72,18 +71,18 @@
  *     Upper West Side ........ priority 59
  *     (temporarily hidden: John F. Kennedy Airport, LaGuardia Airport)
  *
- *   NORTH CAROLINA (positions 27–29):
+ *   NORTH CAROLINA (positions 26–28):
  *     Chapel Hill ............ priority 50
- *     Apex ................... priority 49   (Coming Soon)   <-- NEW
- *     Cary ................... priority 48   (Coming Soon)   <-- was 49
+ *     Apex ................... priority 49   (Coming Soon)
+ *     Cary ................... priority 48   (Coming Soon)
  *
- *   TENNESSEE (position 30):
+ *   TENNESSEE (position 29):
  *     Turkey Creek ........... priority 45
  *
- *   TEXAS (position 31):
+ *   TEXAS (position 30):
  *     River Oaks ............. priority 40   (Coming Soon)
  *
- *   UTAH (position 32):
+ *   UTAH (position 31):
  *     Salt Lake City ......... priority < 40 (sorts last)   (Coming Soon)
  */
 
@@ -96,15 +95,15 @@
 }
 
 .stockist-result-list ul > li:nth-child(1)::before,
+.stockist-result-list ul > li:nth-child(7)::before,
 .stockist-result-list ul > li:nth-child(8)::before,
-.stockist-result-list ul > li:nth-child(9)::before,
+.stockist-result-list ul > li:nth-child(19)::before,
 .stockist-result-list ul > li:nth-child(20)::before,
 .stockist-result-list ul > li:nth-child(21)::before,
-.stockist-result-list ul > li:nth-child(22)::before,
-.stockist-result-list ul > li:nth-child(27)::before,
+.stockist-result-list ul > li:nth-child(26)::before,
+.stockist-result-list ul > li:nth-child(29)::before,
 .stockist-result-list ul > li:nth-child(30)::before,
-.stockist-result-list ul > li:nth-child(31)::before,
-.stockist-result-list ul > li:nth-child(32)::before {
+.stockist-result-list ul > li:nth-child(31)::before {
   display: block;
   width: calc(100% + 32px);
   margin: 20px -16px 12px -16px;
@@ -127,53 +126,53 @@
    STATE NAMES
    ============================================================ */
 
-/* California – 7 locations (positions 1–7) */
+/* California – 6 locations (positions 1–6) */
 .stockist-result-list ul > li:nth-child(1)::before {
   content: "California";
 }
 
-/* District of Columbia – 1 location (position 8) */
-.stockist-result-list ul > li:nth-child(8)::before {
+/* District of Columbia – 1 location (position 7) */
+.stockist-result-list ul > li:nth-child(7)::before {
   content: "District of Columbia";
 }
 
-/* Florida – 11 locations (positions 9–19) */
-.stockist-result-list ul > li:nth-child(9)::before {
+/* Florida – 11 locations (positions 8–18) */
+.stockist-result-list ul > li:nth-child(8)::before {
   content: "Florida";
 }
 
-/* Illinois – 1 location (position 20) */
-.stockist-result-list ul > li:nth-child(20)::before {
+/* Illinois – 1 location (position 19) */
+.stockist-result-list ul > li:nth-child(19)::before {
   content: "Illinois";
 }
 
-/* Montana – 1 location (position 21) */
-.stockist-result-list ul > li:nth-child(21)::before {
+/* Montana – 1 location (position 20) */
+.stockist-result-list ul > li:nth-child(20)::before {
   content: "Montana";
 }
 
-/* New York – 5 visible locations (positions 22–26) */
-.stockist-result-list ul > li:nth-child(22)::before {
+/* New York – 5 visible locations (positions 21–25) */
+.stockist-result-list ul > li:nth-child(21)::before {
   content: "New York";
 }
 
-/* North Carolina – 3 locations (positions 27–29) */
-.stockist-result-list ul > li:nth-child(27)::before {
+/* North Carolina – 3 locations (positions 26–28) */
+.stockist-result-list ul > li:nth-child(26)::before {
   content: "North Carolina";
 }
 
-/* Tennessee – 1 location (position 30) */
-.stockist-result-list ul > li:nth-child(30)::before {
+/* Tennessee – 1 location (position 29) */
+.stockist-result-list ul > li:nth-child(29)::before {
   content: "Tennessee";
 }
 
-/* Texas – 1 location (position 31) */
-.stockist-result-list ul > li:nth-child(31)::before {
+/* Texas – 1 location (position 30) */
+.stockist-result-list ul > li:nth-child(30)::before {
   content: "Texas";
 }
 
-/* Utah – 1 location (position 32) */
-.stockist-result-list ul > li:nth-child(32)::before {
+/* Utah – 1 location (position 31) */
+.stockist-result-list ul > li:nth-child(31)::before {
   content: "Utah";
 }
 
@@ -207,15 +206,15 @@
 
 @media (max-width: 600px) {
   .stockist-result-list ul > li:nth-child(1)::before,
+  .stockist-result-list ul > li:nth-child(7)::before,
   .stockist-result-list ul > li:nth-child(8)::before,
-  .stockist-result-list ul > li:nth-child(9)::before,
+  .stockist-result-list ul > li:nth-child(19)::before,
   .stockist-result-list ul > li:nth-child(20)::before,
   .stockist-result-list ul > li:nth-child(21)::before,
-  .stockist-result-list ul > li:nth-child(22)::before,
-  .stockist-result-list ul > li:nth-child(27)::before,
+  .stockist-result-list ul > li:nth-child(26)::before,
+  .stockist-result-list ul > li:nth-child(29)::before,
   .stockist-result-list ul > li:nth-child(30)::before,
-  .stockist-result-list ul > li:nth-child(31)::before,
-  .stockist-result-list ul > li:nth-child(32)::before {
+  .stockist-result-list ul > li:nth-child(31)::before {
     font-size: 14px;
     padding: 8px 12px;
     margin: 14px -12px 8px -12px;
